@@ -16,6 +16,7 @@
 <h1> List of Heros</h1>
 <ul>
   <!-- * prefixed with ngFor is necessary so is let keyword in ngFor expression -->
+  <!--  add and remove a CSS class conditionally. Just add [class.some-css-class]="some-condition" -->
   <li *ngFor="let hero of heroes" (click)="onSelectHero(hero)" [class.selected]="hero===selectedHero">
     <span>{{hero.name}}</span>
   </li>
