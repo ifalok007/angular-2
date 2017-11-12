@@ -1,0 +1,23 @@
+<!-- Angular js folowing built-in pipes:
+ CurrencyPipe, JsonPipe, DatePipe, LowerCasePipe, UpperCasePipe, I18nSelectPipe etc
+-->
+<p>
+  hero object with json pipe : {{hero|json}}
+</p>
+<div>
+  <h1>{{hero.name}}</h1>
+</div>
+<div>
+  <label  for="latestMovieName">Latest Movie Name:</label>
+  <!-- ngModel is available in FormsModule, you ned to import it to use ng-model -->
+  <input [(ngModel)]="hero.latestMovie" placeholder="latest Movie">
+</div>                          
+
+<h1> List of Heros</h1>
+<ul>
+  <!-- * prefixed with ngFor is necessary so is let keyword in ngFor expression -->
+  <li *ngFor="let hero of heroes" (click)="onSelectHero(hero)">
+    <span>{{hero.name}}</span>
+  </li>
+</ul>
+<h2>{{selectedHero.name}} works in {{selectedHero.latestMovie}}</h2>
