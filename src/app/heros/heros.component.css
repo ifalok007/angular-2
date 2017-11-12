@@ -1,0 +1,7 @@
+li{
+    background-color: #fcc;
+    max-width: 100px;
+}
+li.selected{
+    background-color: #fca;
+}
