@@ -69,7 +69,7 @@ Note SystemJS is implementing the ES6 module loading standard. Webpack is just a
 
 With SystemJS its sole responsibility is the lazy loading of files so something is still needed to minify those files, transpile those files (e.g. from SASS to CSS), etc. These jobs that must be done are known as tasks.
 
-Webpack, when configured, correctly does this for you (and bundles the output together). If you want to do something similar with SystemJS you would typically use a JavaScript task runner. The most popular task runner is another npm module called gulp.
+Webpack, when configured, correctly does this for you (and bundles the output together). If you want to do something similar with SystemJS you would typically use a JavaScript task runner. The most popular task runner is another npm module called **gulp**.
 
 So, for example, SystemJS might lazy load a minified JavaScript file that has been minified by gulp. Gulp, when setup correctly, can minify files on the fly and live reload. Live reloading is the automatic detection of a code change and an automatic browser refresh to update. Great during development. With CSS, live streaming is possible (i.e. you see the page update the new styles without the page even reloading).
 
