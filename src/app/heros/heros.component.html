@@ -21,4 +21,8 @@
     <span>{{hero.name}}</span>
   </li>
 </ul>
-<h2>{{selectedHero.name}} works in {{selectedHero.latestMovie}}</h2>
+
+<!-- <h2>{{selectedHero.name}} works in {{selectedHero.latestMovie}}</h2>  -->
+<!--now selectd hero's detail will be shown by child component-->
+<app-hero-details [hero]="selectedHero"></app-hero-details>
+<!--[hero]="selectedHero" is a one way binding-->
