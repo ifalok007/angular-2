@@ -65,7 +65,7 @@ Webpack 2 (which will offer tree shaking) is in beta so maybe it's a bad time to
 
 Note SystemJS is implementing the ES6 module loading standard. Webpack is just another npm module.
 
-##Task runners (optional reading for those who want to understand the ecosystem in which SystemJS might exist)
+## Task runners (optional reading for those who want to understand the ecosystem in which SystemJS might exist)
 
 With SystemJS its sole responsibility is the lazy loading of files so something is still needed to minify those files, transpile those files (e.g. from SASS to CSS), etc. These jobs that must be done are known as tasks.
 
