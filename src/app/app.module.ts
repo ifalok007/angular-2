@@ -6,9 +6,12 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HerosComponent } from './heros/heros.component';
 import { HeroDetailsComponent } from './hero-details/hero-details.component';
+import { HeroService } from './services/hero.service';
 
 /**
- * @NgModule's imports array contains a list of external module which app needs.
+ * imports :  contains a list of external module which app needs.
+ * providers : The providers array tells Angular to create a single, shared instance
+ * of HeroService and inject into any class that asks for it
  */
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

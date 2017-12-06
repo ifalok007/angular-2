@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Hero } from '../Hero'; // an import path can not end with .ts
-import { HeroesList } from '../mock-heroes-list';
+/*import { HeroesList } from '../mock-heroes-list'; as we are going to use HeroService to get list of heros*/
+import { HeroService } from '../services/hero.service';
 /*
   Angular components and directives have life cycle hooks like ngOnChanges, ngOnInit, ngDoCheck and ngDestroy etc.
   Developper can use any lifecycle moment by implementing one or more lifecycle hook interfaces in Angular core library.
@@ -19,16 +20,25 @@ import { HeroesList } from '../mock-heroes-list';
 export class HerosComponent implements OnInit {
 
   hero: Hero = { id: 1223, latestMovie: 'Justice League', name: 'Liam Nesson' };
-  heroes: Hero[] = HeroesList;
+  heroes: Hero[];
   selectedHero: Hero;
 
-  constructor() { }
+  constructor(private heroService: HeroService) {
+    /**
+     * reserve constructor for simple initialization like wiring constructor parameters to peroperties
+     * The constructor should not call such method which makes http request, use ngOnInit life cycle hook
+     * for such use cases.
+     */
+    // this.heroes = heroService.getHeros();
+   }
 
   ngOnInit() {
-
+    this.getHeroes();
   }
 
-
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeros();
+  }
 
   onSelectHero(hero: Hero) {
     this.selectedHero = hero;
