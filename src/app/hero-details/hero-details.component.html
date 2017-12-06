@@ -1,6 +1,9 @@
 <!-- we will take this hero object as input from parent/enclosing component, so in component class file we will
   anotate it with @Input() decorator.
  -->
+ <!-- ngModel is part of Forms module hence before using ngModel we need to import Forms module 
+  and add it in imports section of @NgModule
+ -->
 <div *ngIf="hero">
 
   <h2>{{ hero.name | uppercase }} Details</h2>

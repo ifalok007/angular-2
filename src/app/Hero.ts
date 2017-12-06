@@ -1,4 +1,4 @@
-export class Hero{
+export class Hero {
     id: Number;
     name: String;
     latestMovie: String;

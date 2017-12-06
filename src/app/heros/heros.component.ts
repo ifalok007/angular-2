@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Hero } from '../Hero';// an import path can not end with .ts
+import { Hero } from '../Hero'; // an import path can not end with .ts
 import { HeroesList } from '../mock-heroes-list';
 /*
   Angular components and directives have life cycle hooks like ngOnChanges, ngOnInit, ngDoCheck and ngDestroy etc.
@@ -14,20 +14,23 @@ import { HeroesList } from '../mock-heroes-list';
   selector: 'app-heros',
   templateUrl: './heros.component.html',
   styleUrls: ['./heros.component.css']
-  //encapsulation: ViewEncapsulation.None    -?
+  // encapsulation: ViewEncapsulation.None    -?
 })
 export class HerosComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   hero: Hero = { id: 1223, latestMovie: 'Justice League', name: 'Liam Nesson' };
   heroes: Hero[] = HeroesList;
   selectedHero: Hero;
 
-  onSelectHero(hero:Hero){
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
+
+
+  onSelectHero(hero: Hero) {
     this.selectedHero = hero;
   }
 
